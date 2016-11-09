@@ -99,7 +99,7 @@ public class GUITimer extends JFrame implements ItemListener
 
         minutesDropDownMenu.addItemListener(this);
 
-        setBackground(Color.RED);
+        setBackground(Color.BLUE);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setTitle("Countdown Timer");
         pack();
@@ -142,6 +142,7 @@ public class GUITimer extends JFrame implements ItemListener
         Timeclass tc = new Timeclass();
         timer = new Timer(1000, tc);
         initialTime = System.currentTimeMillis();
+        timer.setInitialDelay(50);
         timer.start();
     }
   
@@ -180,7 +181,7 @@ public class GUITimer extends JFrame implements ItemListener
 
             if (remainingTime == 0)
             {
-                timerDisplay.setText("Stop");
+                timerDisplay.setText("TIME'S UP");
                 timer.stop();
             }
         }
